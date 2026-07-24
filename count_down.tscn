@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cj0p3c07a4gsu"]
+
+[ext_resource type="Script" uid="uid://cbb8i5x5il62r" path="res://CountdownTimer.gd" id="1_0rk1c"]
+
+[node name="CountDown" type="Node" unique_id=1844627605]
+script = ExtResource("1_0rk1c")
+
+[node name="Label" type="Label" parent="." unique_id=829946713]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 100
+text = "00:00:00"
+
+[node name="Timer" type="Timer" parent="." unique_id=862242233]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

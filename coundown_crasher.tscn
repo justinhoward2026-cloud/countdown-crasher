@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://tps62x5ch7vi"]
 
-[node name="Coundown crasher" type="Node2D" unique_id=289598195]
+[ext_resource type="PackedScene" uid="uid://cj0p3c07a4gsu" path="res://count_down.tscn" id="1_dvipr"]
+
+[node name="Countdown crasher" type="Node2D" unique_id=289598195]
 
 [node name="World" type="Node2D" parent="." unique_id=179042073]
+
+[node name="CountDown" parent="." unique_id=1844627605 instance=ExtResource("1_dvipr")]

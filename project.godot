@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="countdown crasher"
+run/main_scene="uid://tps62x5ch7vi"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+CountdownManager="*uid://b2waetqr5ufq0"
 
 [display]
 
