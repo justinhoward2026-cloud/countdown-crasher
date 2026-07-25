@@ -1,14 +1,20 @@
 [gd_scene format=3 uid="uid://cj0p3c07a4gsu"]
 
-[ext_resource type="Script" uid="uid://cbb8i5x5il62r" path="res://CountdownTimer.gd" id="1_0rk1c"]
+[ext_resource type="Script" uid="uid://cbb8i5x5il62r" path="res://scripts/CountdownTimer.gd" id="1_0rk1c"]
+[ext_resource type="FontFile" uid="uid://3g7cc3bdqqf1" path="res://fonts/Phased.otf" id="2_wp2lp"]
 
-[node name="CountDown" type="Node" unique_id=1844627605]
+[node name="CountDown" type="Node2D" unique_id=124813121]
 script = ExtResource("1_0rk1c")
 
 [node name="Label" type="Label" parent="." unique_id=829946713]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 100
+visibility_layer = 2
+texture_filter = 1
+offset_left = -127.0
+offset_top = -46.0
+offset_right = 145.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_wp2lp")
+theme_override_font_sizes/font_size = 50
 text = "00:00:00"
 
 [node name="Timer" type="Timer" parent="." unique_id=862242233]

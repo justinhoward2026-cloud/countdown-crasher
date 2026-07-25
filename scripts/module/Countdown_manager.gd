@@ -3,8 +3,8 @@ extends Node
 signal clock_updated
 signal time_up
 
-var hours := 24
-var minutes := 0
+var hours := 0
+var minutes := 30
 var seconds := 0
 
 func subtract_time(h := 0, m := 0, s := 0):

@@ -1,9 +1,19 @@
 [gd_scene format=3 uid="uid://tps62x5ch7vi"]
 
-[ext_resource type="PackedScene" uid="uid://cj0p3c07a4gsu" path="res://count_down.tscn" id="1_dvipr"]
+[ext_resource type="PackedScene" uid="uid://cyk4totkgt2pu" path="res://sets/lobby.tscn" id="1_dvipr"]
+[ext_resource type="PackedScene" uid="uid://cj0p3c07a4gsu" path="res://count_down.tscn" id="2_orhbw"]
+[ext_resource type="PackedScene" uid="uid://c76wf7edcxpmp" path="res://Player.tscn" id="3_f40cg"]
 
 [node name="Countdown crasher" type="Node2D" unique_id=289598195]
 
-[node name="World" type="Node2D" parent="." unique_id=179042073]
+[node name="lobby" parent="." unique_id=1823764109 instance=ExtResource("1_dvipr")]
+position = Vector2(-2, 55)
 
-[node name="CountDown" parent="." unique_id=1844627605 instance=ExtResource("1_dvipr")]
+[node name="my_player" parent="lobby" unique_id=386850778 instance=ExtResource("3_f40cg")]
+position = Vector2(531, 301)
+
+[node name="CountDown" parent="." unique_id=1844627605 instance=ExtResource("2_orhbw")]
+position = Vector2(541, 263)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1083078851]
+position = Vector2(565, 304)
