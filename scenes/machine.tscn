@@ -1,41 +1,87 @@
 [gd_scene format=3 uid="uid://bi6ghu10nyo05"]
 
-[ext_resource type="Texture2D" uid="uid://cpok2h6lpka3m" path="res://icon.svg" id="1_6a4ke"]
+[ext_resource type="Script" uid="uid://c7uvhfw03pnse" path="res://scenes/machine.gd" id="1_73k52"]
+[ext_resource type="PackedScene" uid="uid://dnu1unhqcthn5" path="res://compents/interactions/interactable.tscn" id="2_73k52"]
+[ext_resource type="Texture2D" uid="uid://cpok2h6lpka3m" path="res://icon.svg" id="2_448ux"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8my3d"]
-size = Vector2(105, 100)
+[sub_resource type="Animation" id="Animation_448ux"]
+resource_name = "Lever"
+length = 0.19999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.9062953, 0.886583]
+}
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2lm3"]
-size = Vector2(129, 129)
+[sub_resource type="Animation" id="Animation_i4f25"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.9062953, 1.0277835]
+}
 
-[node name="machine" type="Node" unique_id=628613530]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eo4jl"]
+_data = {
+&"Lever": SubResource("Animation_448ux"),
+&"RESET": SubResource("Animation_i4f25")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x71nx"]
+radius = 29.017237
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj3or"]
+size = Vector2(80, 74)
+
+[node name="machine" type="StaticBody2D" unique_id=1072660533]
+script = ExtResource("1_73k52")
 
 [node name="lever" type="Node2D" parent="." unique_id=1583512486]
+position = Vector2(40, 6)
+rotation = -0.9062953
+scale = Vector2(0.62254554, 0.58203286)
 
-[node name="Icon" type="Sprite2D" parent="lever" unique_id=209065947]
-position = Vector2(74.69344, -5.051791)
-rotation = -0.69818926
-scale = Vector2(0.23680577, 0.05108205)
-texture = ExtResource("1_6a4ke")
+[node name="handle" type="Sprite2D" parent="lever" unique_id=209065947]
+position = Vector2(15.83, 0)
+scale = Vector2(0.237, 0.136)
+texture = ExtResource("2_448ux")
 
-[node name="Icon2" type="Sprite2D" parent="lever" unique_id=1400339769]
-position = Vector2(88.94601, -17.854584)
-rotation = -0.69818926
+[node name="tip" type="Sprite2D" parent="lever" unique_id=1400339769]
+position = Vector2(33.89, 0)
 scale = Vector2(0.0889568, 0.10190519)
-texture = ExtResource("1_6a4ke")
+texture = ExtResource("2_448ux")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lever" unique_id=1724088990]
+libraries/ = SubResource("AnimationLibrary_eo4jl")
 
 [node name="body" type="Sprite2D" parent="." unique_id=1457512160]
 position = Vector2(1, 0)
-texture = ExtResource("1_6a4ke")
+scale = Vector2(0.62254554, 0.58203286)
+texture = ExtResource("2_448ux")
 
-[node name="interract_area" type="Area2D" parent="." unique_id=1248642763]
+[node name="Interactable" parent="." unique_id=1789225609 instance=ExtResource("2_73k52")]
+light_mask = 0
+position = Vector2(12, -5)
+collision_mask = 0
+interact_name = "flip"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interract_area" unique_id=1095635937]
-position = Vector2(118.5, 1)
-shape = SubResource("RectangleShape2D_8my3d")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1315364730]
+position = Vector2(49, 9)
+shape = SubResource("CircleShape2D_x71nx")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1817972461]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1771298022]
-position = Vector2(1.5, -0.5)
-shape = SubResource("RectangleShape2D_v2lm3")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915804168]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_oj3or")

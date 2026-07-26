@@ -1,19 +1,27 @@
 [gd_scene format=3 uid="uid://tps62x5ch7vi"]
 
-[ext_resource type="PackedScene" uid="uid://cyk4totkgt2pu" path="res://sets/lobby.tscn" id="1_dvipr"]
-[ext_resource type="PackedScene" uid="uid://cj0p3c07a4gsu" path="res://scenes/count_down.tscn" id="2_orhbw"]
-[ext_resource type="PackedScene" uid="uid://c76wf7edcxpmp" path="res://scenes/Player.tscn" id="3_f40cg"]
+[ext_resource type="Shader" uid="uid://bmom2e0nai05g" path="res://scenes/camera_pix_art_shader.gdshader" id="1_0jcrw"]
+[ext_resource type="PackedScene" uid="uid://cyk4totkgt2pu" path="res://sets/world.tscn" id="1_woiyl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8b5wv"]
+shader = ExtResource("1_0jcrw")
+shader_parameter/cam_offset = Vector2(0, 0)
 
 [node name="Countdown crasher" type="Node2D" unique_id=289598195]
 
-[node name="lobby" parent="." unique_id=1823764109 instance=ExtResource("1_dvipr")]
-position = Vector2(-2, 55)
+[node name="SubViewport" type="SubViewportContainer" parent="." unique_id=1320299823]
+texture_filter = 1
+material = SubResource("ShaderMaterial_8b5wv")
+offset_left = -79.0
+offset_top = -21.0
+offset_right = 401.0
+offset_bottom = 249.0
+scale = Vector2(4, 4)
 
-[node name="my_player" parent="lobby" unique_id=386850778 instance=ExtResource("3_f40cg")]
-position = Vector2(531, 301)
+[node name="SubViewport" type="SubViewport" parent="SubViewport" unique_id=805345772]
+handle_input_locally = false
+size = Vector2i(480, 270)
+render_target_update_mode = 4
 
-[node name="CountDown" parent="." unique_id=1844627605 instance=ExtResource("2_orhbw")]
-position = Vector2(541, 263)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1083078851]
-position = Vector2(565, 304)
+[node name="world" parent="SubViewport/SubViewport" unique_id=84841635 instance=ExtResource("1_woiyl")]
+position = Vector2(21, 45)

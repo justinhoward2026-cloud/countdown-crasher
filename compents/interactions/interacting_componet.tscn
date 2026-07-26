@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cjvmri7k1oyvk"]
+
+[ext_resource type="Script" uid="uid://cor0b50n44ian" path="res://compents/interactions/interacting_componet.gd" id="1_td4al"]
+[ext_resource type="FontFile" uid="uid://s4u0w6qeegg1" path="res://fonts/monogram/ttf/monogram-extended-italic.ttf" id="2_enqlh"]
+[ext_resource type="FontFile" uid="uid://ot5aagqji2j1" path="res://fonts/monogram/ttf/monogram.ttf" id="3_q6flt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2lm3"]
+radius = 17.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_enqlh"]
+font = ExtResource("3_q6flt")
+font_size = 12
+outline_size = 1
+outline_color = Color(0.50140655, 0.5014065, 0.5014065, 1)
+
+[node name="InteractingComponet" type="Node2D" unique_id=1319428116 node_paths=PackedStringArray("interact_label")]
+script = ExtResource("1_td4al")
+interact_label = NodePath("InteractRange/interact_label")
+
+[node name="InteractRange" type="Area2D" parent="." unique_id=145852814]
+z_index = 10
+position = Vector2(-1, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=1772618611]
+shape = SubResource("CircleShape2D_v2lm3")
+
+[node name="interact_label" type="Label" parent="InteractRange" unique_id=113145714]
+light_mask = 0
+visibility_layer = 2
+texture_filter = 1
+offset_left = -32.0
+offset_top = -39.0
+offset_right = 37.0
+offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("2_enqlh")
+theme_override_font_sizes/font_size = 12
+text = "'E' to interact"
+label_settings = SubResource("LabelSettings_enqlh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c1bvm3rdiwwm3"]
+
+[sub_resource type="GDScript" id="GDScript_slwai"]
+script/source = "extends Camera2D
+
+@export var player: CharacterBody2D
+
+@export var deadzone_x := 120.0
+@export var deadzone_y := 80.0
+
+@export var follow_speed := 8.0
+
+func _physics_process(delta):
+
+	var target = global_position
+
+	# Horizontal
+	var dx = player.global_position.x - global_position.x
+
+	if dx > deadzone_x:
+		target.x = player.global_position.x - deadzone_x
+	elif dx < -deadzone_x:
+		target.x = player.global_position.x + deadzone_x
+
+	# Vertical
+	var dy = player.global_position.y - global_position.y
+
+	if dy > deadzone_y:
+		target.y = player.global_position.y - deadzone_y
+	elif dy < -deadzone_y:
+		target.y = player.global_position.y + deadzone_y
+
+	global_position = global_position.lerp(target, follow_speed * delta)"
+
+[node name="Camera2D" type="Camera2D" unique_id=1496965135]
+script = SubResource("GDScript_slwai")
