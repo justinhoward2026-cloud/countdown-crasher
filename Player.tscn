@@ -1,19 +1,23 @@
 [gd_scene format=3 uid="uid://c76wf7edcxpmp"]
 
 [ext_resource type="Script" uid="uid://bjox6a5dekqjk" path="res://character_body_2d.gd" id="1_xhfnw"]
-[ext_resource type="Texture2D" uid="uid://dmcb5twpwht0i" path="res://player canvas.png" id="2_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://dyg4ttpch4a5t" path="res://art/player canvas gmtk-export.png" id="2_kpjcp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kne1u"]
-size = Vector2(11, 23.24)
+size = Vector2(12, 28.31)
 
 [node name="my_player" type="CharacterBody2D" unique_id=386850778]
 script = ExtResource("1_xhfnw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1284019700]
+scale = Vector2(1.2, 1.168)
 texture = ExtResource("2_kpjcp")
 region_enabled = true
-region_rect = Rect2(5.342945, 55.53776, 21.129501, 26.52724)
+region_rect = Rect2(6.8228846, 3.7636633, 16.435833, 27.443459)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=349511313]
-position = Vector2(0.5, 1.6200004)
+position = Vector2(0, 2.1549997)
 shape = SubResource("RectangleShape2D_kne1u")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=40891962]
+zoom = Vector2(3.35, 3.35)
