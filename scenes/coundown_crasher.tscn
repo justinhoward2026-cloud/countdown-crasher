@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://tps62x5ch7vi"]
 
 [ext_resource type="PackedScene" uid="uid://cyk4totkgt2pu" path="res://sets/lobby.tscn" id="1_dvipr"]
-[ext_resource type="PackedScene" uid="uid://cj0p3c07a4gsu" path="res://count_down.tscn" id="2_orhbw"]
-[ext_resource type="PackedScene" uid="uid://c76wf7edcxpmp" path="res://Player.tscn" id="3_f40cg"]
+[ext_resource type="PackedScene" uid="uid://cj0p3c07a4gsu" path="res://scenes/count_down.tscn" id="2_orhbw"]
+[ext_resource type="PackedScene" uid="uid://c76wf7edcxpmp" path="res://scenes/Player.tscn" id="3_f40cg"]
 
 [node name="Countdown crasher" type="Node2D" unique_id=289598195]
 

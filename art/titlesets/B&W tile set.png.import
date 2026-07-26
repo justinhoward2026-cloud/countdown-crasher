@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq65kigjt03uu"
-path="res://.godot/imported/PrototypeTilemap16x16.png-550825a58817aa586129e50229ba2601.ctex"
+uid="uid://bclepbbm2jxyf"
+path="res://.godot/imported/B&W tile set.png-fe7d74a54072fda2bbdea8c106eee43e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PrototypeTilemap16x16.png"
-dest_files=["res://.godot/imported/PrototypeTilemap16x16.png-550825a58817aa586129e50229ba2601.ctex"]
+source_file="res://art/titlesets/B&W tile set.png"
+dest_files=["res://.godot/imported/B&W tile set.png-fe7d74a54072fda2bbdea8c106eee43e.ctex"]
 
 [params]
 

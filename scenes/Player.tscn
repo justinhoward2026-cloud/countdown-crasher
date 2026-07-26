@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://c76wf7edcxpmp"]
 
-[ext_resource type="Script" uid="uid://bjox6a5dekqjk" path="res://character_body_2d.gd" id="1_xhfnw"]
-[ext_resource type="Texture2D" uid="uid://dyg4ttpch4a5t" path="res://art/player canvas gmtk-export.png" id="2_kpjcp"]
+[ext_resource type="Script" uid="uid://bjox6a5dekqjk" path="res://scripts/character_body_2d.gd" id="1_v6fml"]
+[ext_resource type="Texture2D" uid="uid://dyg4ttpch4a5t" path="res://art/player canvas gmtk-export.png" id="2_3li8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kne1u"]
 size = Vector2(12, 28.31)
 
 [node name="my_player" type="CharacterBody2D" unique_id=386850778]
-script = ExtResource("1_xhfnw")
+script = ExtResource("1_v6fml")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1284019700]
 scale = Vector2(1.2, 1.168)
-texture = ExtResource("2_kpjcp")
+texture = ExtResource("2_3li8b")
 region_enabled = true
 region_rect = Rect2(6.8228846, 3.7636633, 16.435833, 27.443459)
 

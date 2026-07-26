@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bi6ghu10nyo05"]
+
+[ext_resource type="Texture2D" uid="uid://cpok2h6lpka3m" path="res://icon.svg" id="1_6a4ke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8my3d"]
+size = Vector2(105, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2lm3"]
+size = Vector2(129, 129)
+
+[node name="machine" type="Node" unique_id=628613530]
+
+[node name="lever" type="Node2D" parent="." unique_id=1583512486]
+
+[node name="Icon" type="Sprite2D" parent="lever" unique_id=209065947]
+position = Vector2(74.69344, -5.051791)
+rotation = -0.69818926
+scale = Vector2(0.23680577, 0.05108205)
+texture = ExtResource("1_6a4ke")
+
+[node name="Icon2" type="Sprite2D" parent="lever" unique_id=1400339769]
+position = Vector2(88.94601, -17.854584)
+rotation = -0.69818926
+scale = Vector2(0.0889568, 0.10190519)
+texture = ExtResource("1_6a4ke")
+
+[node name="body" type="Sprite2D" parent="." unique_id=1457512160]
+position = Vector2(1, 0)
+texture = ExtResource("1_6a4ke")
+
+[node name="interract_area" type="Area2D" parent="." unique_id=1248642763]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interract_area" unique_id=1095635937]
+position = Vector2(118.5, 1)
+shape = SubResource("RectangleShape2D_8my3d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1817972461]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1771298022]
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_v2lm3")

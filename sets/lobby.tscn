@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cyk4totkgt2pu"]
 
-[ext_resource type="Texture2D" uid="uid://bq65kigjt03uu" path="res://PrototypeTilemap16x16.png" id="1_t7n70"]
-[ext_resource type="Texture2D" uid="uid://bclepbbm2jxyf" path="res://B&W tile set.png" id="2_h34cj"]
+[ext_resource type="Texture2D" uid="uid://bq65kigjt03uu" path="res://art/titlesets/PrototypeTilemap16x16.png" id="1_t7n70"]
+[ext_resource type="Texture2D" uid="uid://bclepbbm2jxyf" path="res://art/titlesets/B&W tile set.png" id="2_h34cj"]
 [ext_resource type="Shader" uid="uid://dfatqcepdg75n" path="res://shaders/reflections.gdshader" id="3_aa5kf"]
 [ext_resource type="Script" uid="uid://b6v15ixa1a8sh" path="res://shaders/water.gd" id="4_a2fs6"]
 
